@@ -1,0 +1,7 @@
+bazel-*
+MODULE.bazel.lock
+**.swp
+/.ijwb
+/.clwb
+/.idea
+tmp/

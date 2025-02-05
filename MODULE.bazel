@@ -1,0 +1,17 @@
+"""Bazel 8 `$(location)` and `--legacy_external_runfiles` example"""
+
+module(name = "bazel-8-location", version = "0.0.0")
+
+MAVEN_REPO = "https://repo.maven.apache.org/maven2/"
+
+repro_repository = use_repo_rule("//:repository.bzl", "repro_repository")
+
+repro_repository(
+    name = "org_apache_commons_commons_lang3_3_5",
+    generated_name = "org_apache_commons_commons_lang3_3_5",
+    url = (
+        MAVEN_REPO +
+        "org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar"
+    ),
+    sha256 = "8ac96fc686512d777fca85e144f196cd7cfe0c0aec23127229497d1a38ff651c",
+)
